@@ -11,26 +11,26 @@ const navItems = [
 
 export const Navbar = () => {
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-50 border-b border-border/50 glass">
+      <nav className="container mx-auto px-6 h-20 flex items-center justify-between">
         <a href="#home" aria-label="Biryani 2 Home">
           <BrandLogo />
         </a>
         <div className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
-            <a key={item.href} href={item.href} className="text-sm text-foreground/80 hover:text-foreground transition-colors story-link">
+            <a key={item.href} href={item.href} className="text-sm font-medium text-foreground/70 hover:text-primary transition-all duration-300 story-link uppercase tracking-wider">
               {item.label}
             </a>
           ))}
         </div>
         <div className="hidden md:block">
           <a href="#contact">
-            <Button variant="hero" size="lg" aria-label="Order Now">Order Now</Button>
+            <Button variant="outline" size="lg" className="hover-glow uppercase tracking-wider font-semibold" aria-label="Order Now">Order Now</Button>
           </a>
         </div>
         <div className="md:hidden">
           <a href="#contact">
-            <Button variant="hero" size="sm">Order</Button>
+            <Button variant="outline" size="sm" className="hover-glow">Order</Button>
           </a>
         </div>
       </nav>

@@ -1,6 +1,4 @@
 import { Section } from "./Section";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Star } from "lucide-react";
 
 const testimonials = [
   {
@@ -23,26 +21,33 @@ const testimonials = [
 export const Testimonials = () => {
   return (
     <Section id="testimonials" title="Customer Love" subtitle="Rated 4.9/5 by our happy customers">
-      <div className="relative">
-        <Carousel className="w-full" >
-          <CarouselContent>
-            {testimonials.map((t) => (
-              <CarouselItem key={t.name} className="md:basis-1/2 lg:basis-1/3">
-                <div className="h-full rounded-lg border bg-card p-6 shadow-sm">
-                  <div className="flex items-center gap-2 text-primary">
-                    {Array.from({ length: t.rating }).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-primary" />
-                    ))}
-                  </div>
-                  <p className="mt-3 text-foreground">“{t.text}”</p>
-                  <div className="mt-4 text-sm text-muted-foreground">— {t.name}</div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+      <div className="grid md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={index}
+            className="bg-card p-8 rounded-xl shadow-luxury border border-primary/20 hover:shadow-gold transition-all duration-500 hover:-translate-y-2 group"
+          >
+            <div className="flex items-center gap-1 mb-6">
+              {[...Array(testimonial.rating)].map((_, i) => (
+                <span key={i} className="text-primary text-xl group-hover:scale-110 transition-transform duration-300" style={{transitionDelay: `${i * 50}ms`}}>⭐</span>
+              ))}
+            </div>
+            <p className="text-foreground/80 italic mb-8 leading-relaxed text-lg font-medium">
+              "{testimonial.text}"
+            </p>
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 bg-gradient-primary rounded-full flex items-center justify-center shadow-gold">
+                <span className="text-primary-foreground font-bold text-lg">
+                  {testimonial.name.split(' ').map(n => n[0]).join('')}
+                </span>
+              </div>
+              <div>
+                <p className="font-bold text-foreground text-lg">{testimonial.name}</p>
+                <p className="text-foreground/60 uppercase tracking-wider text-sm">Verified Customer</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </Section>
   );

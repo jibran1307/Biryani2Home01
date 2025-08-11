@@ -10,18 +10,22 @@ export const Hero = () => {
         className="absolute inset-0 h-full w-full object-cover scale-105 animate-[fade-in_0.8s_ease-out]"
         loading="eager"
       />
-      <div className="absolute inset-0 bg-[hsl(var(--overlay)/0.5)]" aria-hidden />
-      <div className="relative container mx-auto px-4 py-24 md:py-32">
-        <div className="max-w-2xl text-primary-foreground animate-enter">
-          <h1 className="font-display text-4xl md:text-6xl font-extrabold leading-tight">
-            Flavours That Travel to Your Home
+      <div className="absolute inset-0 bg-gradient-hero" aria-hidden />
+      <div className="relative container mx-auto px-6 py-32 md:py-48">
+        <div className="max-w-4xl text-center mx-auto animate-enter">
+          <div className="mb-6">
+            <span className="text-primary font-semibold tracking-widest uppercase text-sm">Ghost Kitchen</span>
+          </div>
+          <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight mb-6">
+            <span className="luxury-text">Flavours That Travel</span><br/>
+            <span className="text-foreground">to Your Home</span>
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-primary-foreground/90">
-            Authentic biryani & non-veg delicacies delivered hot and fresh.
+          <p className="mt-6 text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+            Authentic biryani & non-veg delicacies crafted with passion, delivered with precision.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#menu"><Button variant="hero" size="lg" className="hover-scale">View Menu</Button></a>
-            <a href="#contact"><Button variant="inverted" size="lg" className="hover-scale">Order Now</Button></a>
+          <div className="mt-12 flex flex-wrap gap-6 justify-center">
+            <a href="#menu"><Button variant="luxury" size="lg" className="hover-scale uppercase tracking-wider font-semibold px-8 py-4">View Menu</Button></a>
+            <a href="#contact"><Button variant="outline" size="lg" className="hover-glow uppercase tracking-wider font-semibold px-8 py-4">Order Now</Button></a>
           </div>
         </div>
       </div>

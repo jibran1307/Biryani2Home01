@@ -18,42 +18,74 @@ export const ContactSection = () => {
 
   return (
     <Section id="contact" title="Contact Us" subtitle="Have a question or want to place an order? Send us a message.">
-      <div className="grid md:grid-cols-2 gap-8">
-        <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="grid md:grid-cols-2 gap-16">
+        <div className="space-y-8">
           <div>
-            <label className="block text-sm mb-1">Name</label>
-            <input value={name} onChange={(e) => setName(e.target.value)} required placeholder="Your name" className="w-full rounded-md border bg-background px-3 py-2 outline-none focus:ring-2 focus:ring-ring" />
+            <h3 className="font-display text-3xl font-bold mb-6 luxury-text">Get in Touch</h3>
+            <p className="text-foreground/80 leading-relaxed text-lg">
+              Ready to experience authentic biryani? We'd love to hear from you. 
+              Send us a message and we'll get back to you as soon as possible.
+            </p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-4">
+          
+          <div className="space-y-6">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 bg-gradient-primary rounded-full flex items-center justify-center shadow-gold">
+                <Phone className="text-primary-foreground h-6 w-6" />
+              </div>
+              <div>
+                <p className="font-bold text-foreground text-lg">Call Us</p>
+                <a href="tel:+919876543210" className="text-primary hover:text-primary/80 transition-colors text-lg font-medium">+91 98765 43210</a>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 bg-gradient-primary rounded-full flex items-center justify-center shadow-gold">
+                <Mail className="text-primary-foreground h-6 w-6" />
+              </div>
+              <div>
+                <p className="font-bold text-foreground text-lg">Email Us</p>
+                <a href="mailto:biryani2h@gmail.com" className="text-primary hover:text-primary/80 transition-colors text-lg font-medium">biryani2h@gmail.com</a>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 bg-gradient-primary rounded-full flex items-center justify-center shadow-gold">
+                <MessageSquare className="text-primary-foreground h-6 w-6" />
+              </div>
+              <div>
+                <p className="font-bold text-foreground text-lg">WhatsApp</p>
+                <a href="https://wa.me/919876543210" className="text-primary hover:text-primary/80 transition-colors text-lg font-medium">Chat with us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-card p-8 rounded-xl shadow-luxury border border-primary/20">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label className="block text-sm mb-1">Email</label>
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required placeholder="you@example.com" className="w-full rounded-md border bg-background px-3 py-2 outline-none focus:ring-2 focus:ring-ring" />
+              <label className="block text-foreground font-semibold mb-2">Name</label>
+              <input value={name} onChange={(e) => setName(e.target.value)} required placeholder="Your name" className="w-full rounded-md border border-primary/20 bg-background px-4 py-3 outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors" />
+            </div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-foreground font-semibold mb-2">Email</label>
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required placeholder="you@example.com" className="w-full rounded-md border border-primary/20 bg-background px-4 py-3 outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors" />
+              </div>
+              <div>
+                <label className="block text-foreground font-semibold mb-2">Phone</label>
+                <input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+91 12345 67890" className="w-full rounded-md border border-primary/20 bg-background px-4 py-3 outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors" />
+              </div>
             </div>
             <div>
-              <label className="block text-sm mb-1">Phone</label>
-              <input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Your phone" className="w-full rounded-md border bg-background px-3 py-2 outline-none focus:ring-2 focus:ring-ring" />
+              <label className="block text-foreground font-semibold mb-2">Message</label>
+              <textarea value={message} onChange={(e) => setMessage(e.target.value)} required rows={5} placeholder="Tell us what you'd like to order or ask..." className="w-full rounded-md border border-primary/20 bg-background px-4 py-3 outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors resize-none" />
             </div>
-          </div>
-          <div>
-            <label className="block text-sm mb-1">Message</label>
-            <textarea value={message} onChange={(e) => setMessage(e.target.value)} required rows={5} placeholder="Tell us what you'd like to order or ask..." className="w-full rounded-md border bg-background px-3 py-2 outline-none focus:ring-2 focus:ring-ring" />
-          </div>
-          <div className="flex gap-3">
-            <Button type="submit" variant="hero">Send Message</Button>
-            <a href="mailto:biryani2h@gmail.com" aria-label="Email us"><Button variant="outline"><Mail className="mr-2" /> Email</Button></a>
-          </div>
-        </form>
-        <aside className="space-y-4">
-          <div className="rounded-lg border p-6 bg-accent">
-            <h4 className="font-display text-xl">Get in touch</h4>
-            <p className="mt-2 text-muted-foreground">We typically respond within minutes during working hours.</p>
-            <div className="mt-4 space-y-2">
-              <a href="mailto:biryani2h@gmail.com" className="flex items-center gap-2 story-link"><Mail /> biryani2h@gmail.com</a>
-              <div className="flex items-center gap-2 text-muted-foreground"><Phone /> Phone: —</div>
-              <a href="#" className="flex items-center gap-2 story-link"><MessageSquare /> WhatsApp: —</a>
-            </div>
-          </div>
-        </aside>
+            <Button type="submit" variant="luxury" size="lg" className="w-full hover-glow font-semibold uppercase tracking-wider">
+              Send Message
+            </Button>
+          </form>
+        </div>
       </div>
     </Section>
   );

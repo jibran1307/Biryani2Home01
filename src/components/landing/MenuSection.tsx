@@ -54,41 +54,54 @@ const menu: MenuCategory[] = [
 
 export const MenuSection = () => {
   return (
-    <Section id="menu" title="Menu" subtitle="Biryani, non-veg curries, and sides—freshly prepared and delivered hot.">
-      <div className="grid gap-8">
+    <Section id="menu" title="Our Signature Menu" subtitle="Authentic flavors crafted with premium ingredients and traditional techniques">
+      <div className="grid gap-12">
         {menu.map((category) => (
           <div key={category.title}>
-            <h3 className="font-display text-2xl mb-4">{category.title}</h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <h3 className="font-display text-3xl font-bold luxury-text mb-8 text-center">{category.title}</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {category.items.map((item) => (
-                <Card key={item.name} className="overflow-hidden group">
+                <div
+                  key={item.name}
+                  className="bg-card rounded-xl shadow-luxury border border-primary/10 overflow-hidden group hover:shadow-gold transition-all duration-500 hover:-translate-y-2"
+                >
                   {item.image && (
-                    <img src={item.image} alt={`${item.name} dish`} className="h-44 w-full object-cover group-hover:scale-[1.03] transition-transform" loading="lazy" />
+                    <div className="aspect-video overflow-hidden relative">
+                      <img
+                        src={item.image}
+                        alt={`${item.name} dish`}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
                   )}
                   <CardHeader className="pb-2">
-                    <CardTitle className="flex items-center gap-2">
-                      {item.name}
+                    <CardTitle className="flex items-center gap-2 font-display">
+                      <span className="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
+                        {item.name}
+                      </span>
                       {item.signature && (
-                        <span className="ml-1 rounded-full bg-accent px-2 py-0.5 text-xs text-accent-foreground">Signature</span>
+                        <span className="ml-1 rounded-full bg-gradient-primary px-3 py-1 text-xs font-semibold text-primary-foreground shadow-gold">Signature</span>
                       )}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    <p className="text-sm text-muted-foreground min-h-10">
+                    <p className="text-sm text-foreground/70 min-h-10 leading-relaxed mb-6">
                       {item.description || "Delicious and flavourful."}
                     </p>
                     <div className="mt-4">
-                      <a href="#contact"><Button variant="soft" size="sm">Order via WhatsApp</Button></a>
+                      <a href="#contact"><Button variant="luxury" size="sm" className="w-full hover-glow font-semibold uppercase tracking-wider">Order Now</Button></a>
                     </div>
                   </CardContent>
-                </Card>
+                </div>
               ))}
             </div>
           </div>
         ))}
       </div>
-      <div className="mt-10 text-center">
-        <a href="#contact"><Button variant="hero" size="lg">See Full Menu</Button></a>
+      <div className="mt-16 text-center">
+        <a href="#contact"><Button variant="outline" size="lg" className="hover-glow uppercase tracking-wider font-semibold px-8 py-4">View Full Menu</Button></a>
       </div>
     </Section>
   );
