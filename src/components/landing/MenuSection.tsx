@@ -13,18 +13,17 @@ import fishFry from "@/assets/biryani/fish-fry.jpg";
 interface MenuItem { name: string; description?: string; image?: string; signature?: boolean; }
 interface MenuCategory { title: string; items: MenuItem[] }
 
-const featuredItems: MenuItem[] = [
+const biryaniItems: MenuItem[] = [
   { name: "Mutton Biryani", description: "Our signature dish with tender mutton and aromatic basmati rice.", image: muttonBiryani, signature: true },
   { name: "Chicken Biryani", description: "Classic chicken biryani with authentic flavors.", image: chickenBiryani },
   { name: "Prawn Biryani", description: "Fresh prawns cooked with fragrant rice and coastal spices.", image: prawnBiryani },
-  { name: "Chicken 65", description: "Spicy and crispy chicken pieces, a South Indian favorite.", image: chicken65 },
-  { name: "Butter Chicken", description: "Creamy tomato-based chicken curry.", image: butterChicken },
-  { name: "Fish Fry", description: "Crispy fried fish marinated in coastal spices.", image: fishFry },
+  { name: "Kheema Biryani", description: "Minced mutton cooked with basmati rice and exotic spices.", image: muttonBiryani },
+  { name: "Fish Biryani", description: "Fresh fish fillets with fragrant rice and coastal spices.", image: prawnBiryani },
 ];
 
 export const MenuSection = () => {
   return (
-    <Section id="menu" title="Our Signature Menu" subtitle="Authentic flavors crafted with premium ingredients and traditional techniques">
+    <Section id="menu" title="Our Signature Biryani" subtitle="Premium biryani varieties crafted with authentic spices and techniques">
       <div className="relative">
         <Carousel
           opts={{
@@ -34,7 +33,7 @@ export const MenuSection = () => {
           className="w-full"
         >
           <CarouselContent className="-ml-2 md:-ml-4">
-            {featuredItems.map((item) => (
+            {biryaniItems.map((item) => (
               <CarouselItem key={item.name} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                 <div className="bg-card rounded-xl shadow-luxury border border-primary/10 overflow-hidden group hover:shadow-orange transition-all duration-500 hover:-translate-y-2">
                   {item.image && (

@@ -10,17 +10,17 @@ export const Hero = () => {
         className="absolute inset-0 h-full w-full object-cover scale-105 animate-[fade-in_0.8s_ease-out]"
         loading="eager"
       />
-      <div className="absolute inset-0 bg-gradient-hero" aria-hidden />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" aria-hidden />
       <div className="relative container mx-auto px-6 py-32 md:py-48">
         <div className="max-w-4xl text-center mx-auto animate-enter">
           <div className="mb-6">
-            <span className="text-primary font-semibold tracking-widest uppercase text-sm">Ghost Kitchen</span>
+            <span className="text-primary font-semibold tracking-widest uppercase text-sm drop-shadow-lg">Ghost Kitchen</span>
           </div>
-          <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight mb-6">
-            <span className="luxury-text">Flavours That Travel</span><br/>
-            <span className="text-foreground">to Your Home</span>
+          <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight mb-6 text-white drop-shadow-2xl">
+            <span className="text-primary drop-shadow-lg">Flavours That Travel</span><br/>
+            <span className="text-white">to Your Home</span>
           </h1>
-          <p className="mt-6 text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-6 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
             Authentic biryani & non-veg delicacies crafted with passion, delivered with precision.
           </p>
           <div className="mt-12 flex flex-wrap gap-6 justify-center">
