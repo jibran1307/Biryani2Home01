@@ -34,7 +34,7 @@ export const MenuSection = () => {
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {biryaniItems.map((item) => (
-              <CarouselItem key={item.name} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={item.name} className="pl-2 md:pl-4 basis-1/2">
                 <div className="bg-card rounded-xl shadow-luxury border border-primary/10 overflow-hidden group hover:shadow-orange transition-all duration-500 hover:-translate-y-2">
                   {item.image && (
                     <div className="aspect-video overflow-hidden relative">
