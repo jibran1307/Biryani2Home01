@@ -1,6 +1,8 @@
 import { Section } from "./Section";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { MenuDialog } from "./MenuDialog";
 import muttonBiryani from "@/assets/biryani/mutton-biryani.jpg";
 import chickenBiryani from "@/assets/biryani/chicken-biryani.jpg";
 import prawnBiryani from "@/assets/biryani/prawn-biryani.jpg";
@@ -11,60 +13,30 @@ import fishFry from "@/assets/biryani/fish-fry.jpg";
 interface MenuItem { name: string; description?: string; image?: string; signature?: boolean; }
 interface MenuCategory { title: string; items: MenuItem[] }
 
-const menu: MenuCategory[] = [
-  {
-    title: "Biryani",
-    items: [
-      { name: "Mutton Biryani", description: "Signature dish.", image: muttonBiryani, signature: true },
-      { name: "Chicken Biryani", image: chickenBiryani },
-      { name: "Prawn Biryani", image: prawnBiryani },
-      { name: "Kheema Biryani", image: muttonBiryani },
-    ],
-  },
-  {
-    title: "Non-Veg Cuisines",
-    items: [
-      { name: "Bismal Curry", image: butterChicken },
-      { name: "Mutton Kurma", image: butterChicken },
-      { name: "Chicken Kurma", image: butterChicken },
-      { name: "Fish Curry", image: fishFry },
-      { name: "Attukaal Paaya", image: butterChicken },
-    ],
-  },
-  {
-    title: "Side Dishes",
-    items: [
-      { name: "Chicken 65", image: chicken65 },
-      { name: "Pepper Chicken", image: chicken65 },
-      { name: "Chicken Gravy", image: butterChicken },
-      { name: "Butter Chicken", image: butterChicken },
-      { name: "Chicken Lollipop", image: chicken65 },
-      { name: "Mutton Pepper Gravy", image: butterChicken },
-      { name: "Mutton Sukka", image: muttonBiryani },
-      { name: "Mutton Meat Balls", image: muttonBiryani },
-      { name: "Mutton Brain Fry", image: muttonBiryani },
-      { name: "Mutton Pepper Liver Fry", image: muttonBiryani },
-      { name: "Prawn Masala", image: prawnBiryani },
-      { name: "Fish Fry", image: fishFry },
-      { name: "Crab Gravy", image: fishFry },
-      { name: "Masala Egg Fry", image: chicken65 },
-    ],
-  },
+const featuredItems: MenuItem[] = [
+  { name: "Mutton Biryani", description: "Our signature dish with tender mutton and aromatic basmati rice.", image: muttonBiryani, signature: true },
+  { name: "Chicken Biryani", description: "Classic chicken biryani with authentic flavors.", image: chickenBiryani },
+  { name: "Prawn Biryani", description: "Fresh prawns cooked with fragrant rice and coastal spices.", image: prawnBiryani },
+  { name: "Chicken 65", description: "Spicy and crispy chicken pieces, a South Indian favorite.", image: chicken65 },
+  { name: "Butter Chicken", description: "Creamy tomato-based chicken curry.", image: butterChicken },
+  { name: "Fish Fry", description: "Crispy fried fish marinated in coastal spices.", image: fishFry },
 ];
 
 export const MenuSection = () => {
   return (
     <Section id="menu" title="Our Signature Menu" subtitle="Authentic flavors crafted with premium ingredients and traditional techniques">
-      <div className="grid gap-12">
-        {menu.map((category) => (
-          <div key={category.title}>
-            <h3 className="font-display text-3xl font-bold luxury-text mb-8 text-center">{category.title}</h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {category.items.map((item) => (
-                <div
-                  key={item.name}
-                  className="bg-card rounded-xl shadow-luxury border border-primary/10 overflow-hidden group hover:shadow-gold transition-all duration-500 hover:-translate-y-2"
-                >
+      <div className="relative">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {featuredItems.map((item) => (
+              <CarouselItem key={item.name} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                <div className="bg-card rounded-xl shadow-luxury border border-primary/10 overflow-hidden group hover:shadow-orange transition-all duration-500 hover:-translate-y-2">
                   {item.image && (
                     <div className="aspect-video overflow-hidden relative">
                       <img
@@ -82,26 +54,28 @@ export const MenuSection = () => {
                         {item.name}
                       </span>
                       {item.signature && (
-                        <span className="ml-1 rounded-full bg-gradient-primary px-3 py-1 text-xs font-semibold text-primary-foreground shadow-gold">Signature</span>
+                        <span className="ml-1 rounded-full bg-gradient-primary px-3 py-1 text-xs font-semibold text-primary-foreground shadow-orange">Signature</span>
                       )}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    <p className="text-sm text-foreground/70 min-h-10 leading-relaxed mb-6">
+                    <p className="text-sm text-muted-foreground min-h-12 leading-relaxed mb-6">
                       {item.description || "Delicious and flavourful."}
                     </p>
                     <div className="mt-4">
-                      <a href="#contact"><Button variant="luxury" size="sm" className="w-full hover-glow font-semibold uppercase tracking-wider">Order Now</Button></a>
+                      <a href="#contact"><Button variant="default" size="sm" className="w-full hover-glow font-semibold uppercase tracking-wider">Order Now</Button></a>
                     </div>
                   </CardContent>
                 </div>
-              ))}
-            </div>
-          </div>
-        ))}
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="absolute -left-12 top-1/2 -translate-y-1/2" />
+          <CarouselNext className="absolute -right-12 top-1/2 -translate-y-1/2" />
+        </Carousel>
       </div>
       <div className="mt-16 text-center">
-        <a href="#contact"><Button variant="outline" size="lg" className="hover-glow uppercase tracking-wider font-semibold px-8 py-4">View Full Menu</Button></a>
+        <MenuDialog />
       </div>
     </Section>
   );
