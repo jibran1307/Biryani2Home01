@@ -35,9 +35,9 @@ export const MenuSection = () => {
           <CarouselContent className="-ml-2 md:-ml-4">
             {biryaniItems.map((item) => (
               <CarouselItem key={item.name} className="pl-2 md:pl-4 basis-1/2">
-                <div className="bg-card rounded-xl shadow-luxury border border-primary/10 overflow-hidden group hover:shadow-orange transition-all duration-500 hover:-translate-y-2">
+                <div className="bg-card rounded-lg shadow-luxury border border-primary/10 overflow-hidden group hover:shadow-orange transition-all duration-500 hover:-translate-y-1">
                   {item.image && (
-                    <div className="aspect-video overflow-hidden relative">
+                    <div className="aspect-[4/3] overflow-hidden relative">
                       <img
                         src={item.image}
                         alt={`${item.name} dish`}
@@ -47,22 +47,22 @@ export const MenuSection = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
                   )}
-                  <CardHeader className="pb-2">
+                  <CardHeader className="pb-1 px-3 pt-3">
                     <CardTitle className="flex items-center gap-2 font-display">
-                      <span className="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
+                      <span className="font-bold text-lg text-foreground group-hover:text-primary transition-colors">
                         {item.name}
                       </span>
                       {item.signature && (
-                        <span className="ml-1 rounded-full bg-gradient-primary px-3 py-1 text-xs font-semibold text-primary-foreground shadow-orange">Signature</span>
+                        <span className="ml-1 rounded-full bg-gradient-primary px-2 py-0.5 text-xs font-semibold text-primary-foreground shadow-orange">Signature</span>
                       )}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-sm text-muted-foreground min-h-12 leading-relaxed mb-6">
+                  <CardContent className="pt-0 px-3 pb-3">
+                    <p className="text-xs text-muted-foreground min-h-8 leading-relaxed mb-3">
                       {item.description || "Delicious and flavourful."}
                     </p>
-                    <div className="mt-4">
-                      <a href="#contact"><Button variant="default" size="sm" className="w-full hover-glow font-semibold uppercase tracking-wider">Order Now</Button></a>
+                    <div className="mt-2">
+                      <a href="#contact"><Button variant="default" size="sm" className="w-full hover-glow font-medium text-xs uppercase tracking-wider">Order Now</Button></a>
                     </div>
                   </CardContent>
                 </div>
