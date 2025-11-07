@@ -26,7 +26,7 @@ export const About = () => {
             </div>
             <div>
               <p className="font-bold text-foreground text-xl">Luxury Experience</p>
-              <p className="text-foreground/60 tracking-wide">Rated by 1000+ satisfied customers</p>
+              <p className="text-foreground/60 tracking-wide">Rated by 250+ satisfied customers</p>
             </div>
           </div>
         </div>
@@ -38,7 +38,7 @@ export const About = () => {
           />
           <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-primary rounded-full flex items-center justify-center shadow-gold border-4 border-background">
             <div className="text-center">
-              <span className="text-primary-foreground font-bold text-2xl block">25+</span>
+              <span className="text-primary-foreground font-bold text-2xl block">5+</span>
               <span className="text-primary-foreground text-xs font-medium uppercase tracking-wider">Years</span>
             </div>
           </div>

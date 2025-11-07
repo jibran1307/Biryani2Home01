@@ -14,7 +14,7 @@ export const Hero = () => {
       <div className="relative container mx-auto px-6 py-32 md:py-48">
         <div className="max-w-4xl text-center mx-auto animate-enter">
           <div className="mb-6">
-            <span className="text-primary font-semibold tracking-widest uppercase text-sm drop-shadow-lg">Ghost Kitchen</span>
+            <span className="text-primary font-semibold tracking-widest uppercase text-sm drop-shadow-lg">Biryani 2 Home</span>
           </div>
           <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight mb-6 text-white drop-shadow-2xl">
             <span className="text-primary drop-shadow-lg">Flavours That Travel</span><br/>

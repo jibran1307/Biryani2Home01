@@ -3,18 +3,18 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 const testimonials = [
   {
-    name: "Ayesha",
-    text: "The mutton biryani is a showstopper! Rich aroma and tender meat—arrived piping hot.",
+    name: "Riyaz Mohamad",
+    text: "Amazing quality biryani with soft tender meat. One of the highlights of my trip to Trichy from America. The home made taste is better than any hotels. Must try food!",
     rating: 5,
   },
   {
-    name: "Rahul",
-    text: "Feels like home-cooked biryani. Portions are generous and flavours are spot on.",
+    name: "Ashok Kumar",
+    text: "Good Tasty",
     rating: 5,
   },
   {
-    name: "Priya",
-    text: "Chicken 65 was perfectly crispy and the prawn biryani was heavenly!",
+    name: "Gowthaman Ganapathy",
+    text: "Briyani is fresh, tasty, original and authentic. The service and the delivery is very good and I would like to highly recommend",
     rating: 5,
   },
 ];
@@ -30,9 +30,9 @@ export const Testimonials = () => {
           }}
           className="w-full"
         >
-          <CarouselContent className="-ml-2 md:-ml-4">
+          <CarouselContent className="-ml-2 md:-ml-4 items-stretch">
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2">
+              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 h-full">
                 <div className="bg-card p-8 rounded-xl shadow-luxury border border-primary/10 hover:shadow-orange transition-all duration-500 group min-h-[280px] flex flex-col">
                   <div className="flex items-center gap-1 mb-6">
                     {[...Array(testimonial.rating)].map((_, i) => (
