@@ -8,13 +8,13 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: "Ashok Kumar",
-    text: "Good Tasty",
+    name: "Gowthaman Ganapathy",
+    text: "Briyani is fresh, tasty, original and authentic. The service and the delivery is very good and I would like to highly recommend",
     rating: 5,
   },
   {
-    name: "Gowthaman Ganapathy",
-    text: "Briyani is fresh, tasty, original and authentic. The service and the delivery is very good and I would like to highly recommend",
+    name: "Ashok Kumar",
+    text: "Good Tasty",
     rating: 5,
   },
 ];
