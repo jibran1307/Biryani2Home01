@@ -118,6 +118,19 @@ const Carousel = React.forwardRef<
       }
     }, [api, onSelect])
 
+    React.useEffect(() => {
+      if(!api){
+        return
+      }
+
+      const interval = setInterval(() => {
+        api.scrollNext();
+      },2500)
+
+      return () => clearInterval(interval);
+    }, [api])
+
+
     return (
       <CarouselContext.Provider
         value={{

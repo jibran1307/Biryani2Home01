@@ -32,7 +32,7 @@ export const Testimonials = () => {
         >
           <CarouselContent className="-ml-2 md:-ml-4 items-stretch">
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 h-full">
+              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 h-full">
                 <div className="bg-card p-8 rounded-xl shadow-luxury border border-primary/10 hover:shadow-orange transition-all duration-500 group min-h-[280px] flex flex-col">
                   <div className="flex items-center gap-1 mb-6">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -57,8 +57,8 @@ export const Testimonials = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="absolute -left-12 top-1/2 -translate-y-1/2" />
-          <CarouselNext className="absolute -right-12 top-1/2 -translate-y-1/2" />
+          <CarouselPrevious className="absolute md:-left-12 left-0 top-1/2 -translate-y-1/2" />
+          <CarouselNext className="absolute md:-right-12 right-0 top-1/2 -translate-y-1/2" />
         </Carousel>
       </div>
     </Section>

@@ -34,7 +34,7 @@ export const About = () => {
           <img
             src={aboutImg}
             alt="Chef preparing traditional biryani with authentic spices and techniques"
-            className="rounded-xl shadow-luxury w-full h-[500px] object-cover border border-primary/20"
+            className="rounded-xl shadow-luxury w-full md:h-[500px] h-[300px] object-cover border border-primary/20"
           />
           <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-primary rounded-full flex items-center justify-center shadow-gold border-4 border-background">
             <div className="text-center">

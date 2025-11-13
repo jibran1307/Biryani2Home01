@@ -35,7 +35,7 @@ export const MenuSection = () => {
           >
             <CarouselContent className="-ml-1 md:-ml-2">
               {biryaniItems.map((item) => (
-                <CarouselItem key={item.name} className="pl-1 md:pl-2 basis-1/2">
+                <CarouselItem key={item.name} className="pl-1 md:pl-2 basis-full md:basis-1/2">
                   <div className="bg-card rounded-md shadow-luxury border border-primary/10 overflow-hidden group hover:shadow-orange transition-all duration-500 hover:-translate-y-1 max-w-xs mx-auto">
                     {item.image && (
                       <div className="aspect-[5/4] overflow-hidden relative">
@@ -70,8 +70,8 @@ export const MenuSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="absolute -left-8 top-1/2 -translate-y-1/2 w-8 h-8" />
-            <CarouselNext className="absolute -right-8 top-1/2 -translate-y-1/2 w-8 h-8" />
+            <CarouselPrevious className="absolute md:-left-8 left-0 top-1/2 -translate-y-1/2 w-8 h-8" />
+            <CarouselNext className="absolute md:-right-8 right-0 top-1/2 -translate-y-1/2 w-8 h-8" />
           </Carousel>
         </div>
       </div>
